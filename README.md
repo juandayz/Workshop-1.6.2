@@ -136,6 +136,14 @@ Replace the whole block by:
   
   into: _cMenu =[.............]; paste:
   
-  ```,"#USER:surveillance",
-	"#USER:STATICS","#USER:USEFUL","#USER:ACTIONS","#USER:workshopMenu"```
+```
+  ,"#USER:surveillance","#USER:STATICS","#USER:USEFUL","#USER:ACTIONS","#USER:workshopMenu"
+```
+
+into: _dayzActions =[......];
+paste:
+``
+"s_player_managework"
+```
+
   
