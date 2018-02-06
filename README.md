@@ -15,7 +15,7 @@ DayZ_SafeObjects = workshop_obj + DayZ_SafeObjects;
 DZE_maintainClasses = DZE_maintainClasses + workshop_obj;
 DZE_safeVehicle = ["ParachuteWest","ParachuteC","M2StaticMG","SearchLight_RUS","DSHKM_Gue"];
 ```
-Paste: ```ruby s_player_managework = -1;``` with the rest of actions.
+Paste: ```s_player_managework = -1;``` with the rest of actions.
 
 3.Open your custom fn_selfactions.sqf
 
