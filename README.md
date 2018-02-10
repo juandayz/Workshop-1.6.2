@@ -15,7 +15,12 @@ DayZ_SafeObjects = workshop_obj + DayZ_SafeObjects;
 DZE_maintainClasses = DZE_maintainClasses + workshop_obj;
 DZE_safeVehicle = ["ParachuteWest","ParachuteC","M2StaticMG","SearchLight_RUS","DSHKM_Gue"];
 ```
-2-B-Paste: ```s_player_managework = -1;``` with the rest of actions.
+2-B-Paste: 
+```
+s_player_managework = -1;
+s_player_cctv = -1;
+``` 
+with the rest of actions.
 
 3.A.Open your custom fn_selfactions.sqf
 Find:
@@ -105,6 +110,41 @@ Replace the whole block by:
   
   C-Find:
   ```
+//Towing with tow truck
+	/*
+	if(_typeOfCursorTarget == "TOW_DZE") then {
+		if (s_player_towing < 0) then {
+			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
+				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_ATTACH" "\z\addons\dayz_code\actions\tow_AttachStraps.sqf",_cursorTarget, 0, false, true];				
+			} else {
+				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_DETACH", "\z\addons\dayz_code\actions\tow_DetachStraps.sqf",_cursorTarget, 0, false, true];				
+			};
+		};
+	} else {
+		player removeAction s_player_towing;
+		s_player_towing = -1;
+	};
+	*/
+  ```
+  
+Below paste:
+  
+ ```ruby
+ // CCTV Custom self actions
+_isLaptop2 = _cursorTarget isKindOf "SmallTV";
+if (_isLaptop2) then {
+if (s_player_cctv < 0) then {
+s_player_cctv = player addAction ["Camera System", "scripts\workshop\cctv\init.sqf",_cursorTarget, 1, true, true, "", ""];
+}
+} else {
+player removeAction s_player_cctv;
+s_player_cctv = -1;
+};	
+```
+
+D-Find:
+
+  ```
   player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
 	player removeAction s_player_manageDoor;
@@ -114,6 +154,8 @@ Replace the whole block by:
   ```ruby
   player removeAction s_player_managework;
   s_player_managework = -1;
+  player removeAction s_player_cctv;
+  s_player_cctv = -1;
   ```
   
   4-Open your server_monitor.sqf
@@ -143,7 +185,7 @@ Replace the whole block by:
 into: _dayzActions =[......];
 paste:
 ```
-"s_player_managework"
+"s_player_managework","s_player_cctv"
 ```
 
   
