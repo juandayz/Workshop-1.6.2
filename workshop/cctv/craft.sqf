@@ -465,7 +465,7 @@ sleep 3;
 
 
 player setVariable[Z_moneyVariable, (_coins - _cost), true];
-titleText [format["you pay %1 cigarrettes for your survillange system",_cost] , "PLAIN DOWN", 1];
+titleText [format["you pay %1  for your survillange system",_cost] , "PLAIN DOWN", 1];
 
 ////////////////////////////////////////////////////////////////////////////////        
         _limit = 3; //times it takes to build by default
