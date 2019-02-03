@@ -1,5 +1,8 @@
 # Workshop-1.6.2
 
+PLEASE DONATE: https://github.com/juandayz/Workshop-1.6.2/blob/master/DONATION.md
+
+
 Allow players in his bases to: Breed Animals. Craft Mounted weapons. Craft a carpenter bench. A clothes maker table. Survillange Systems with cams (credits to makas for this one). A kitchen to cook better, A water source.
 
 **Install:**
